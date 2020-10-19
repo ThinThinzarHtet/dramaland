@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "6b9078ac-d75c-4532-899c-f488f978eceb",
+		"name": "dramaland",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dramas",
+			"item": [
+				{
+					"name": "allDramas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Weightlifting Fairy Kim Bok Joo\",\r\n    \"description\" : \"idjeojw\",\r\n    \"released_date\" : \"2017-08-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/dramas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"drama_id\" : 4,\r\n    \"title\" : \"Weightlifting Fairy Kim Bok Joo\",\r\n    \"description\" : \"idjeojw\",\r\n    \"released_date\" : \"2017-08-16\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/dramas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/dramas/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"dramas",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
