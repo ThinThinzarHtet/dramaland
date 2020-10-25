@@ -20,6 +20,7 @@ public class Company {
 	public void setCompany_id(Long company_id) {
 		this.company_id = company_id;
 	}
+
 	public String getCompany_name() {
 		return company_name;
 	}

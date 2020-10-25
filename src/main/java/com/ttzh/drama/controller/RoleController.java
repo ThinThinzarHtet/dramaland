@@ -46,7 +46,7 @@ public class RoleController {
 	  }
 	
 	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
-	public void deleteById(@PathVariable Long person_id) {
-		roleRepository.deleteById(person_id);
+	public void deleteById(@PathVariable Long role_id) {
+		roleRepository.deleteById(role_id);
 	}
 }

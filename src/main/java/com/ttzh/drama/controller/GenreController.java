@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ttzh.drama.model.Dramas;
 import com.ttzh.drama.model.Genre;
+import com.ttzh.drama.repository.DramasRepository;
 import com.ttzh.drama.repository.GenreRepository;
 
 @RestController
@@ -22,6 +24,9 @@ import com.ttzh.drama.repository.GenreRepository;
 public class GenreController {
 	@Autowired
 	GenreRepository genreRepository;
+	
+	@Autowired
+	DramasRepository dramasRepository;
 	
 	@GetMapping
 	public List<Genre> getAll(){
@@ -45,8 +50,13 @@ public class GenreController {
 	    return genreRepository.saveAndFlush(oldGenre);
 	  }
 	
-	@RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "{genre_id}", method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable Long genre_id) {
 		genreRepository.deleteById(genre_id);
 	}
+	
+	/*@GetMapping("dramas/{genreId}")
+    public List<Dramas> getDramasByGenreId(@PathVariable Long genreId){
+        return dramasRepository.findByGenres_GenreId(genreId);
+	}*/
 }
